@@ -1,0 +1,240 @@
+scene:
+  background:
+   color: '#222'
+sources:
+  airfldp:
+    type: MVT
+    url: airfldp/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  builtupa:
+    type: MVT
+    url: builtupa/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  builtupp:
+    type: MVT
+    url: builtupp/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  coasta:
+    type: MVT
+    url: coasta/{z}/{x}/{y}.mvt
+  coastl:
+    type: MVT
+    url: coastl/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  damc:
+    type: MVT
+    url: damc/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  daml:
+    type: MVT
+    url: daml/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  exitc:
+    type: MVT
+    url: exitc/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  ferryc:
+    type: MVT
+    url: ferryc/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  ferryl:
+    type: MVT
+    url: ferryl/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  gnamep:
+    type: MVT
+    url: gnamep/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  gnamet:
+    type: MVT
+    url: gnamet/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  hydrodec:
+    type: MVT
+    url: hydrodec/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  intercc:
+    type: MVT
+    url: intercc/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  islanda:
+    type: MVT
+    url: islanda/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  lakeresa:
+    type: MVT
+    url: lakeresa/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  landicea:
+    type: MVT
+    url: landicea/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  landmaska:
+    type: MVT
+    url: landmaska/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  levelcc:
+    type: MVT
+    url: levelcc/{z}/{x}/{y}.mvt
+  miscl:
+    type: MVT
+    url: miscl/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  miscp:
+    type: MVT
+    url: miscp/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  polbnda:
+    type: MVT
+    url: polbnda/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  polbndl:
+    type: MVT
+    url: polbndl/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  portp:
+    type: MVT
+    url: portp/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  raill:
+    type: MVT
+    url: raill/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  riverl:
+    type: MVT
+    url: riverl/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  roadl:
+    type: MVT
+    url: roadl/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  rstatp:
+    type: MVT
+    url: rstatp/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  ort:
+    type: Raster
+    url: //cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg
+    max_zoom: 4
+layers:
+  ort:
+    data: {source: ort}
+    draw:
+      raster:
+        color: [0.3, 0.3, 0.3]
+        order: 0
+  airp:
+    data: {source: airp}
+    draw:
+      text:
+        font:
+          size: 10
+          fill: yellow
+        text_source: function() {return '✈ ' + feature.nam;}
+        color: red
+        priority: 1
+  builtupa:
+    data: {source: builtupa}
+    draw:
+      polygons:
+        color: red
+  builtupp:
+    data: {source: builtupp}
+    draw:
+      text:
+        font:
+          size: 10
+        text_source: nam
+        color: white
+        priority: 5
+  coastl:
+    data: {source: coastl}
+    draw:
+      lines:
+        order: 4
+        color: blue
+        width: 1px
+  ferryl:
+    data: {source: ferryl}
+    draw:
+      lines:
+        color: aqua
+        width: 1px
+  lakeresa:
+    data: {source: lakeresa}
+    draw:
+      polygons:
+        color: aqua
+  miscl:
+    data: {source: miscl}
+    draw:
+      lines:
+        color: gray
+        width: 1px
+  miscp:
+    data: {source: miscp}
+    draw:
+      text:
+        font:
+          size: 10
+        text_source: function() {return '🏢';}
+        priority: 5
+  polbnda:
+    data: {source: polbnda}
+    draw:
+      polygons:
+        color: [0, 0.4, 0.1, 0.1]
+        order: 0
+      text:
+        font:
+          size: 30
+          fill: [0.3, 0.3, 0.3, 0.3]
+        text_source: laa
+  polbndl:
+    data: {source: polbndl}
+    draw:
+      lines:
+        color: red
+        width: 1px
+  portp:
+    data: {source: portp}
+    draw:
+      text:
+        font:
+          size: 10
+          fill: yellow
+        text_source: function() {return '🚢 ' + feature.nam;}
+        priority: 4
+  raill:
+    data: {source: raill}
+    draw:
+      lines:
+        color: gray
+        width: 2px
+  riverl:
+    data: {source: riverl}
+    draw:
+      lines:
+        color: aqua
+        width: 1px
+      text:
+        font:
+          size: 10
+          fill: aqua
+        text_source: "function() {return (feature.nam == 'UNK') ? '' : feature.nam;}"
+        offset: [0, 6]
+  roadl:
+    data: {source: roadl}
+    draw:
+      lines:
+        color: white
+        width: 1px
+  rstatp:
+    data: {source: rstatp}
+    draw:
+      text:
+        font:
+          size: 10
+          fill: green
+        text_source: nam
+        priority: 5
