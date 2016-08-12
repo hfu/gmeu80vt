@@ -76,13 +76,6 @@ sources:
   levelcc:
     type: MVT
     url: levelcc/{z}/{x}/{y}.mvt
-  miscl:
-    type: MVT
-    url: miscl/{z}/{x}/{y}.mvt
-    max_zoom: 8
-  miscp:
-    type: MVT
-    url: miscp/{z}/{x}/{y}.mvt
     max_zoom: 8
   polbnda:
     type: MVT
@@ -92,25 +85,45 @@ sources:
     type: MVT
     url: polbndl/{z}/{x}/{y}.mvt
     max_zoom: 8
-  portp:
+  railrdc:
     type: MVT
-    url: portp/{z}/{x}/{y}.mvt
+    url: railrdc/{z}/{x}/{y}.mvt
     max_zoom: 8
-  raill:
+  railrdl:
     type: MVT
-    url: raill/{z}/{x}/{y}.mvt
+    url: railrdl/{z}/{x}/{y}.mvt
     max_zoom: 8
-  riverl:
+  restc:
     type: MVT
-    url: riverl/{z}/{x}/{y}.mvt
+    url: restc/{z}/{x}/{y}.mvt
     max_zoom: 8
   roadl:
     type: MVT
     url: roadl/{z}/{x}/{y}.mvt
     max_zoom: 8
-  rstatp:
+  seaa:
     type: MVT
-    url: rstatp/{z}/{x}/{y}.mvt
+    url: seaa/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  shorel:
+    type: MVT
+    url: shorel/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  springc:
+    type: MVT
+    url: springc/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  springp:
+    type: MVT
+    url: springp/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  watrcrsa:
+    type: MVT
+    url: watrcrsa/{z}/{x}/{y}.mvt
+    max_zoom: 8
+  watrcrsl:
+    type: MVT
+    url: watrcrsl/{z}/{x}/{y}.mvt
     max_zoom: 8
   ort:
     type: Raster
@@ -165,20 +178,6 @@ layers:
     draw:
       polygons:
         color: aqua
-  miscl:
-    data: {source: miscl}
-    draw:
-      lines:
-        color: gray
-        width: 1px
-  miscp:
-    data: {source: miscp}
-    draw:
-      text:
-        font:
-          size: 10
-        text_source: function() {return '🏢';}
-        priority: 5
   polbnda:
     data: {source: polbnda}
     draw:
@@ -211,8 +210,13 @@ layers:
       lines:
         color: gray
         width: 2px
-  riverl:
-    data: {source: riverl}
+  watrcrsa:
+    data: {source: watrcrsa}
+    draw:
+      polygons:
+        color: aqua
+  watrcrsl:
+    data: {source: watrcrsl}
     draw:
       lines:
         color: aqua
